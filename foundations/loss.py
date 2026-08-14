@@ -17,7 +17,7 @@ class Solution:
                 sum_log += (np.log(1 - y_pred[i])) + 1e-7
 
         # return round(your_answer, 4)
-        return np.round(-1*(np.sum(sum_log))/len(y_true), 4)
+        return np.round(-1*(sum_log)/len(y_true), 4)
 
     def categorical_cross_entropy(self, y_true: NDArray[np.float64], y_pred: NDArray[np.float64]) -> float:
         # y_true: one-hot encoded true labels (shape: n_samples x n_classes)
@@ -33,7 +33,7 @@ class Solution:
                 if(y_true[i][j] == 1):
                     sum_log += np.log(y_pred[i][j]) + 1e-7
 
-        return np.round(-1*(np.sum(sum_log))/n, 4)
+        return np.round(-1*sum_log/n, 4)
 
 
         
