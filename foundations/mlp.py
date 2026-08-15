@@ -15,6 +15,7 @@ class Solution:
         for i in range(len(weights)):
             print(x.shape, weights[i].T.shape)
             x = x @ weights[i] + biases[i]
-            x = np.maximum(0, x)
+            if i != len(weights) - 1:
+                x = np.maximum(0, x)
 
         return x
