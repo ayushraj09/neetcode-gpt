@@ -10,7 +10,7 @@ class Solution:
         # activation: "sigmoid" or "relu"
         #
         # Pre-activation: z = dot(x, w) + b
-        z = np.dot(x, w) + b
+        z = x@w + b
         # print(z)
         # Sigmoid: σ(z) = 1 / (1 + exp(-z))
         if(activation == 'sigmoid'):
